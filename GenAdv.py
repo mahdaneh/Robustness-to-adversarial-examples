@@ -25,8 +25,6 @@ import gzip
 
 
 def Load_weights(Pretrained_net,Arch , dataset_type,BN):
-
-
     X_val = None
     y_val = None
     if dataset_type=='cifar10':
