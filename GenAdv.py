@@ -161,12 +161,12 @@ def Load_weights(Pretrained_net,Arch , dataset_type,BN):
 class FGS_family (object):
     """"
     Attributes:
-        net_info contains some relevant functions
+        net_info contains some required functions like logits, cross-entropy loss, and etc,for generating adversaries
         data contains training and test sets
         dataset_type the name of dataset
         Arch the underlying network's architecture
         epsilon the hyperparameter,
-        indx correctly classified samples' index
+        indx index of correctly classified samples
     """""
     def __init__(self, net_info, data, dataset_type,Arch , epsilon, indx ):
         self.net_info = net_info
