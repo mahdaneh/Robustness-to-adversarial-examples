@@ -415,8 +415,8 @@ def DeepFool (net_info, data,  dataset_type=None,Arch=None, indx = None, hyp = 0
                     min_distance = Dis_orig2fool
                     wk = diff_grad
                     Opt_label = label
-
-            prtb =  (1e-4+min_distance)* (wk)/ np.sqrt(np.sum(wk.flatten()**2))
+            min_distance = np.abs(logits(prtb_x)[0][0,Opt_label] - logits(prtb_x)[0][0,orig_labl[0]])
+            prtb =  (1e-4+min_distance)* (wk)/ (np.sqrt(np.sum(wk.flatten()**2))**2
             accum_prtb += prtb
 
             prtb_x =  orig_x+ (1+0.02)*accum_prtb
